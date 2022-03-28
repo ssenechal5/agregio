@@ -1,0 +1,8 @@
+com\agregio\park\ParkRegistrationRequest.class
+com\agregio\park\MarketRequest.class
+com\agregio\park\ParkRepositoryCustom.class
+com\agregio\park\ParkController.class
+com\agregio\park\ParkRepository.class
+com\agregio\park\ParkService.class
+com\agregio\park\ParkApplication.class
+com\agregio\park\ParkRepositoryImpl.class
