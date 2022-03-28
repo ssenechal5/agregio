@@ -13,9 +13,9 @@ import java.util.Optional;
 public record ParkController(ParkService parkService) {
 
     @PostMapping
-    public void registerPark(@RequestBody ParkRegistrationRequest parkRegistrationRequest) {
+    public boolean registerPark(@RequestBody ParkRegistrationRequest parkRegistrationRequest) {
         log.info("New Park Registration {}", parkRegistrationRequest);
-        parkService.registerPark(parkRegistrationRequest);
+        return parkService.registerPark(parkRegistrationRequest);
     }
 
     @GetMapping
