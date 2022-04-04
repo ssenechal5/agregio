@@ -1,8 +1,9 @@
-com\agregio\offer\OfferRepositoryImpl.class
 com\agregio\offer\OfferApplication.class
-com\agregio\offer\OfferRepositoryCustom.class
-com\agregio\offer\OfferService.class
-com\agregio\offer\OfferRepository.class
-com\agregio\offer\OfferController.class
-com\agregio\offer\OfferRegistrationRequest.class
-com\agregio\offer\MarketRequest.class
+com\agregio\offer\entity\QOffer.class
+com\agregio\offer\controller\OfferController.class
+com\agregio\offer\entity\Offer$OfferBuilder.class
+com\agregio\offer\entity\Offer.class
+com\agregio\offer\repository\OfferRepositoryCustom.class
+com\agregio\offer\repository\OfferRepositoryImpl.class
+com\agregio\offer\repository\OfferRepository.class
+com\agregio\offer\service\OfferService.class

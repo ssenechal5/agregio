@@ -8,12 +8,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="offer" />
-        <module name="entities" />
+        <module name="common" />
         <module name="park" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="entities" target="16" />
+      <module name="common" target="16" />
       <module name="offer" target="16" />
       <module name="park" target="16" />
       <module name="services" target="16" />

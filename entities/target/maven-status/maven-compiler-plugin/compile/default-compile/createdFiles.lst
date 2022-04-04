@@ -1,9 +1,0 @@
-com\agregio\entity\Park.class
-com\agregio\constant\ChunkType.class
-com\agregio\entity\Park$ParkBuilder.class
-com\agregio\constant\MarketType.class
-com\agregio\entity\Offer$OfferBuilder.class
-com\agregio\entity\Offer.class
-com\agregio\entity\QPark.class
-com\agregio\constant\ParkType.class
-com\agregio\entity\QOffer.class

@@ -12,7 +12,7 @@
   <modules>
     <module>offer</module>
     <module>park</module>
-    <module>entities</module>
+    <module>common</module>
   </modules>
 
   <name>services</name>
