@@ -15,14 +15,6 @@ import javax.persistence.*;
 @NoArgsConstructor
 public class Park {
     @Id
-    @SequenceGenerator(
-            name = "park_id_sequence",
-            sequenceName = "park_id_sequence"
-    )
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "park_id_sequence"
-    )
     private Long id;
     private String name;
     @Enumerated(EnumType.STRING)

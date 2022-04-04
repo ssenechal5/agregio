@@ -17,14 +17,6 @@ import java.util.Date;
 @NoArgsConstructor
 public class Offer {
     @Id
-    @SequenceGenerator(
-            name = "offer_id_sequence",
-            sequenceName = "offer_id_sequence"
-    )
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "offer_id_sequence"
-    )
     private Long id;
     private Date day;
     @Enumerated(EnumType.STRING)

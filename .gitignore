@@ -4,9 +4,12 @@
 /dist
 /tmp
 /target
+/offer/target
+/park/target
 
 # dependencies
 /node_modules
+/mariadb
 
 # IDEs and editors
 /.idea

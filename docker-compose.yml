@@ -1,38 +1,20 @@
 services:
-  postgres:
-    container_name: postgres
-    image: postgres
+  database:
+    image: 'mariadb:10.3'
+    container_name: 'database'
+    restart: always
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      PGDATA: /data/postgres
-    volumes:
-      - postgres:/data/postgres
+      MYSQL_USER: admin
+      MYSQL_USER_PASSWORD: admin
+      MYSQL_DATABASE: admin
+      MYSQL_ROOT_PASSWORD: admin
+      MARIADB_ROOT_PASSWORD: root
+      MARIADB_ALLOW_EMPTY_ROOT_PASSWORD: yes
     ports:
-      - "5432:5432"
-    networks:
-      - postgres
-    restart: unless-stopped
-
-  pgadmin:
-    container_name: pgadmin
-    image: dpage/pgadmin4
-    environment:
-      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-pgadmin4@pgadmin.org}
-      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-admin}
-      PGADMIN_CONFIG_SERVER_MODE: 'False'
+      - '3306:3306'
+    healthcheck: # healthcheck check mariadb and set service 'healthy' accordingly
+      test: mysqladmin ping -h 127.0.0.1 -u $$MYSQL_USER --password=$$MYSQL_PASSWORD
+    tty: true
+    # l'alignement doit être le même que pour les autres parties
     volumes:
-      - pgadmin:/var/lib/pgadmin
-    ports:
-      - "5050:80"
-    networks:
-      - postgres
-    restart: unless-stopped
-
-networks:
-  postgres:
-    driver: bridge
-
-volumes:
-  postgres:
-  pgadmin:
+      - ./mariadb/:/var/lib/mysql/
