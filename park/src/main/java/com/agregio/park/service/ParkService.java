@@ -1,8 +1,8 @@
 package com.agregio.park.service;
 
-import com.agregio.constant.MarketType;
+import com.agregio.park.constant.MarketType;
+import com.agregio.park.dto.park.ParkRegistrationRequest;
 import com.agregio.park.entity.Park;
-import com.agregio.constant.dto.park.ParkRegistrationRequest;
 import com.agregio.park.repository.ParkRepository;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +12,7 @@ import java.util.Optional;
 @Service
 public record ParkService(ParkRepository parkRepository) {
 
-    public boolean registerPark(ParkRegistrationRequest request) {
+    public Park registerPark(ParkRegistrationRequest request) {
         Park park = Park.builder()
                 .name(request.name())
                 .type(request.type())
@@ -20,7 +20,7 @@ public record ParkService(ParkRepository parkRepository) {
 
         // TODO: Validate Request
         parkRepository.saveAndFlush(park);
-        return true;
+        return park;
     }
 
     public Optional<Park> getPark(Long id) {
@@ -29,6 +29,10 @@ public record ParkService(ParkRepository parkRepository) {
 
     public List<Park> getParksByMarket(MarketType market) {
         return parkRepository.getParksByMarket(market);
+    }
+
+    public List<Park> getParks() {
+        return parkRepository.findAll();
     }
 
     public Park updatePark(Long id, Park parkUpdated) {

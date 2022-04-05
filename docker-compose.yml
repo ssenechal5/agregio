@@ -1,19 +1,14 @@
 services:
   database:
-    image: 'mariadb:10.3'
+    image: 'mariadb:10.5'
     container_name: 'database'
     restart: always
     environment:
-      MYSQL_USER: admin
-      MYSQL_USER_PASSWORD: admin
-      MYSQL_DATABASE: admin
       MYSQL_ROOT_PASSWORD: admin
-      MARIADB_ROOT_PASSWORD: root
-      MARIADB_ALLOW_EMPTY_ROOT_PASSWORD: yes
     ports:
       - '3306:3306'
     healthcheck: # healthcheck check mariadb and set service 'healthy' accordingly
-      test: mysqladmin ping -h 127.0.0.1 -u $$MYSQL_USER --password=$$MYSQL_PASSWORD
+      test: mysqladmin ping -h 127.0.0.1 -u root --password=admin
     tty: true
     # l'alignement doit être le même que pour les autres parties
     volumes:

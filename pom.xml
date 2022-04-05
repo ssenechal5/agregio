@@ -12,7 +12,6 @@
   <modules>
     <module>offer</module>
     <module>park</module>
-    <module>common</module>
   </modules>
 
   <name>services</name>
@@ -40,6 +39,14 @@
   </dependencyManagement>
 
   <dependencies>
+
+    <dependency>
+      <groupId>org.mariadb.jdbc</groupId>
+      <artifactId>mariadb-java-client</artifactId>
+      <version>2.7.5</version>
+      <scope>runtime</scope>
+    </dependency>
+
   </dependencies>
 
   <build>

@@ -1,10 +1,12 @@
 package com.agregio.offer.entity;
 
+import com.agregio.offer.constant.ChunkType;
+import com.agregio.offer.constant.MarketType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import com.agregio.constant.*;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Date;
@@ -16,6 +18,7 @@ import java.util.Date;
 @NoArgsConstructor
 public class Offer {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Date day;
     @Enumerated(EnumType.STRING)

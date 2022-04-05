@@ -1,8 +1,8 @@
 package com.agregio.offer.service;
 
-import com.agregio.constant.*;
+import com.agregio.offer.constant.MarketType;
+import com.agregio.offer.dto.offer.OfferRegistrationRequest;
 import com.agregio.offer.entity.Offer;
-import com.agregio.constant.dto.offer.OfferRegistrationRequest;
 import com.agregio.offer.repository.OfferRepository;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +12,7 @@ import java.util.Optional;
 @Service
 public record OfferService(OfferRepository offerRepository) {
 
-    public boolean registerOffer(OfferRegistrationRequest request) {
+    public Offer registerOffer(OfferRegistrationRequest request) {
         Offer offer = Offer.builder()
                 .day(request.day())
                 .market(request.market())
@@ -25,7 +25,7 @@ public record OfferService(OfferRepository offerRepository) {
         // TODO: Validate Request
 
         offerRepository.saveAndFlush(offer);
-        return true;
+        return offer;
     }
 
     public Optional<Offer> getOffer(Long id) {
@@ -52,5 +52,9 @@ public record OfferService(OfferRepository offerRepository) {
             return true;
         }
         return false;
+    }
+
+    public List<Offer> getOffers() {
+        return offerRepository.findAll();
     }
 }

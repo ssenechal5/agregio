@@ -55,5 +55,6 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-jcl:5.3.13" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-test:5.3.13" level="project" />
     <orderEntry type="library" name="Maven: org.xmlunit:xmlunit-core:2.8.3" level="project" />
+    <orderEntry type="library" name="mariadb-java-client-2.7.5" level="project" />
   </component>
 </module>

@@ -1,7 +1,10 @@
 package com.agregio.park.repository;
 
-import com.agregio.constant.MarketType;
-import com.agregio.park.entity.*;
+import com.agregio.park.constant.MarketType;
+import com.agregio.park.entity.Park;
+import com.agregio.park.entity.Offer;
+import com.agregio.park.entity.QPark;
+import com.agregio.park.entity.QOffer;
 import com.querydsl.core.BooleanBuilder;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.time.DateUtils;
@@ -33,6 +36,6 @@ public class ParkRepositoryImpl extends QuerydslRepositorySupport implements Par
         }
         where.and(offer.day.between(start, end));
 
-        return from(park).join(offer.park, park).where(where).fetch();
+        return from(park).where(where).fetch();
     }
 }

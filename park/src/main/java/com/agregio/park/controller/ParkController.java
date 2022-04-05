@@ -1,8 +1,8 @@
 package com.agregio.park.controller;
 
+import com.agregio.park.dto.market.MarketRequest;
+import com.agregio.park.dto.park.ParkRegistrationRequest;
 import com.agregio.park.entity.Park;
-import com.agregio.constant.dto.market.MarketRequest;
-import com.agregio.constant.dto.park.ParkRegistrationRequest;
 import com.agregio.park.service.ParkService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
@@ -16,13 +16,19 @@ import java.util.Optional;
 public record ParkController(ParkService parkService) {
 
     @PostMapping
-    public boolean registerPark(@RequestBody ParkRegistrationRequest parkRegistrationRequest) {
+    public Park registerPark(@RequestBody ParkRegistrationRequest parkRegistrationRequest) {
         log.info("New Park Registration {}", parkRegistrationRequest);
         return parkService.registerPark(parkRegistrationRequest);
     }
 
     @GetMapping
-    public List<Park> getParksByMarket(MarketRequest marketRequest) {
+    public List<Park> getParks() {
+        log.info("Get Parks ");
+        return parkService.getParks();
+    }
+
+    @GetMapping(path = "/byMarket")
+    public List<Park> getParksByMarket(@RequestBody MarketRequest marketRequest) {
         log.info("Get market Parks {}", marketRequest);
         return parkService.getParksByMarket(marketRequest.market());
     }

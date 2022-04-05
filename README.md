@@ -1,7 +1,6 @@
 Agregio
 =======
 
-
 Story: APIs Agregio
 ======================
 
@@ -12,3 +11,23 @@ Les parcs producteurs d'électricité, de différents types (solaires, éoliens 
 Nous vous demandons d'implémenter les APIs permettant de créer une offre, de créer un parc, de lister les offres proposées par Agregio pour chaque marché et d'obtenir la liste des parcs qui vendent sur un marché.
 
 Nous attendons comme livrable, le code source du service qui réalise ces APIs et de tous les éléments que vous pourriez considérer nécessaire.
+
+
+Docker MariaDB
+======================
+docker run --name mariadb_10_5 -e MYSQL_ROOT_PASSWORD=admin -p 3306:3306  -d docker.io/library/mariadb:10.5
+
+
+MariaDB
+======================
+Create schema
+CREATE SCHEMA `agregio` ;
+
+Add user agregio
+CREATE USER 'agregio'@localhost IDENTIFIED BY 'agregio';
+GRANT ALL PRIVILEGES ON 'agregio'.* TO 'agregio'@localhost;
+FLUSH PRIVILEGES;
+
+Liquibase
+======================
+./liquibase.bat --driver=org.mariadb.jdbc.Driver --classpath=./mariadb-java-client-2.2.6.jar --changeLogFile=./db.changelog-master.xml --url="jdbc:mysql://localhost/agregio" --username=agregio --password=agregio migrate

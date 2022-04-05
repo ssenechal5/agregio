@@ -1,12 +1,10 @@
 package com.agregio.offer.service;
 
-import com.agregio.constant.ChunkType;
-import com.agregio.constant.MarketType;
-import com.agregio.constant.ParkType;
-import com.agregio.constant.dto.offer.OfferRegistrationRequest;
+import com.agregio.offer.constant.ChunkType;
+import com.agregio.offer.constant.MarketType;
+import com.agregio.offer.dto.offer.OfferRegistrationRequest;
 import com.agregio.offer.entity.Offer;
 import com.agregio.offer.repository.OfferRepository;
-import com.agregio.offer.service.OfferService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -21,7 +19,7 @@ import org.mockito.quality.Strictness;
 import java.math.BigDecimal;
 import java.util.Date;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
@@ -70,6 +68,6 @@ public class OfferServiceTest {
                 .build();
 
         when(offerRepository.saveAndFlush(ArgumentMatchers.any(Offer.class))).thenReturn(offer);
-        assertTrue(offerService.registerOffer(requestOffer));
+        assertNotNull(offerService.registerOffer(requestOffer));
     }
 }

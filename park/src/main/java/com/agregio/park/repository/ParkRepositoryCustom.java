@@ -1,6 +1,6 @@
 package com.agregio.park.repository;
 
-import com.agregio.constant.MarketType;
+import com.agregio.park.constant.MarketType;
 import com.agregio.park.entity.Park;
 import org.springframework.data.repository.NoRepositoryBean;
 

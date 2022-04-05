@@ -1,6 +1,6 @@
 package com.agregio.offer.repository;
 
-import com.agregio.constant.MarketType;
+import com.agregio.offer.constant.MarketType;
 import com.agregio.offer.entity.Offer;
 import com.agregio.offer.entity.QOffer;
 import com.querydsl.core.BooleanBuilder;

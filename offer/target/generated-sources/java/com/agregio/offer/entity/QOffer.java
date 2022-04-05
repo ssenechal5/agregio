@@ -21,13 +21,13 @@ public class QOffer extends EntityPathBase<Offer> {
 
     public final NumberPath<java.math.BigDecimal> bottomPrice = createNumber("bottomPrice", java.math.BigDecimal.class);
 
-    public final EnumPath<com.agregio.constant.ChunkType> chunk = createEnum("chunk", com.agregio.constant.ChunkType.class);
+    public final EnumPath<com.agregio.offer.constant.ChunkType> chunk = createEnum("chunk", com.agregio.offer.constant.ChunkType.class);
 
     public final DateTimePath<java.util.Date> day = createDateTime("day", java.util.Date.class);
 
     public final NumberPath<Long> id = createNumber("id", Long.class);
 
-    public final EnumPath<com.agregio.constant.MarketType> market = createEnum("market", com.agregio.constant.MarketType.class);
+    public final EnumPath<com.agregio.offer.constant.MarketType> market = createEnum("market", com.agregio.offer.constant.MarketType.class);
 
     public final NumberPath<Long> parkId = createNumber("parkId", Long.class);
 

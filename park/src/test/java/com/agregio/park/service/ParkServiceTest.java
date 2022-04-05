@@ -1,10 +1,9 @@
 package com.agregio.park.service;
 
-import com.agregio.constant.ParkType;
-import com.agregio.constant.dto.park.ParkRegistrationRequest;
+import com.agregio.park.constant.ParkType;
+import com.agregio.park.dto.park.ParkRegistrationRequest;
 import com.agregio.park.entity.Park;
 import com.agregio.park.repository.ParkRepository;
-import com.agregio.park.service.ParkService;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentMatchers;
@@ -13,9 +12,8 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.mockito.junit.jupiter.MockitoSettings;
 import org.mockito.quality.Strictness;
 
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.Mockito.when;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)
@@ -45,7 +43,7 @@ public class ParkServiceTest {
               .type(request.type())
               .build();
       when(parkRepository.saveAndFlush(ArgumentMatchers.any(Park.class))).thenReturn(park);
-      assertTrue(parkService.registerPark(request));
+      assertNotNull(parkService.registerPark(request));
     }
 
     @Test

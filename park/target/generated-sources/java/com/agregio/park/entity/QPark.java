@@ -7,6 +7,7 @@ import com.querydsl.core.types.dsl.*;
 import com.querydsl.core.types.PathMetadata;
 import javax.annotation.processing.Generated;
 import com.querydsl.core.types.Path;
+import com.querydsl.core.types.dsl.PathInits;
 
 
 /**
@@ -23,7 +24,9 @@ public class QPark extends EntityPathBase<Park> {
 
     public final StringPath name = createString("name");
 
-    public final EnumPath<com.agregio.constant.ParkType> type = createEnum("type", com.agregio.constant.ParkType.class);
+    public final SetPath<Offer, QOffer> offers = this.<Offer, QOffer>createSet("offers", Offer.class, QOffer.class, PathInits.DIRECT2);
+
+    public final EnumPath<com.agregio.park.constant.ParkType> type = createEnum("type", com.agregio.park.constant.ParkType.class);
 
     public QPark(String variable) {
         super(Park.class, forVariable(variable));

@@ -1,0 +1,1 @@
+./liquibase.bat --driver=org.mariadb.jdbc.Driver --classpath=./mariadb-java-client-2.2.6.jar --changeLogFile=./db.changelog-master.xml --url="jdbc:mysql://localhost/agregio" --username=agregio --password=agregio migrate

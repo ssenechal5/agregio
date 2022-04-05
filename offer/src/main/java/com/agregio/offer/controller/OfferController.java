@@ -1,11 +1,12 @@
 package com.agregio.offer.controller;
 
+import com.agregio.offer.dto.market.MarketRequest;
+import com.agregio.offer.dto.offer.OfferRegistrationRequest;
 import com.agregio.offer.entity.Offer;
 import com.agregio.offer.service.OfferService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
-import com.agregio.constant.dto.offer.OfferRegistrationRequest;
-import com.agregio.constant.dto.market.MarketRequest;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -15,13 +16,19 @@ import java.util.Optional;
 public record OfferController(OfferService offerService) {
 
     @PostMapping
-    public boolean registerOffer(@RequestBody OfferRegistrationRequest offerRegistrationRequest) {
+    public Offer registerOffer(@RequestBody OfferRegistrationRequest offerRegistrationRequest) {
         log.info("New Offer Registration {}", offerRegistrationRequest);
         return offerService.registerOffer(offerRegistrationRequest);
     }
 
     @GetMapping
-    public List<Offer> getOffersByMarket(MarketRequest offersRequest) {
+    public List<Offer> getOffers() {
+        log.info("Get Offers");
+        return offerService.getOffers();
+    }
+
+    @GetMapping(path = "/byMarket")
+    public List<Offer> getOffersByMarket(@RequestBody MarketRequest offersRequest) {
         log.info("Get market Offers {}", offersRequest);
         return offerService.getOffersByMarket(offersRequest.market());
     }
