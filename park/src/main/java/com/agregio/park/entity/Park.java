@@ -1,6 +1,7 @@
 package com.agregio.park.entity;
 
 import com.agregio.park.constant.ParkType;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -22,6 +23,7 @@ public class Park {
     @Enumerated(EnumType.STRING)
     private ParkType type;
 
-    @OneToMany(mappedBy="park")
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy="park")
+    @JsonBackReference
     private Set<Offer> offers;
 }

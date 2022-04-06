@@ -2,6 +2,7 @@ package com.agregio.park.entity;
 
 import com.agregio.park.constant.ChunkType;
 import com.agregio.park.constant.MarketType;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -30,5 +31,6 @@ public class Offer {
 
     @ManyToOne
     @JoinColumn(name="parkId", nullable=false)
+    @JsonManagedReference
     protected Park park;
 }

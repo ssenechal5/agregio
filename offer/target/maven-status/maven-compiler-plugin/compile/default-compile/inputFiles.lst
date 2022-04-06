@@ -1,8 +1,6 @@
 C:\Users\Sylvain\workspace_eclipse42_wildfly_wlogger3\agregio\offer\src\main\java\com\agregio\offer\repository\OfferRepository.java
 C:\Users\Sylvain\workspace_eclipse42_wildfly_wlogger3\agregio\offer\src\main\java\com\agregio\offer\constant\ChunkType.java
 C:\Users\Sylvain\workspace_eclipse42_wildfly_wlogger3\agregio\offer\target\generated-sources\java\com\agregio\offer\entity\QOffer.java
-C:\Users\Sylvain\workspace_eclipse42_wildfly_wlogger3\agregio\offer\src\main\java\com\agregio\offer\constant\ParkType.java
-C:\Users\Sylvain\workspace_eclipse42_wildfly_wlogger3\agregio\offer\src\main\java\com\agregio\offer\dto\market\MarketRequest.java
 C:\Users\Sylvain\workspace_eclipse42_wildfly_wlogger3\agregio\offer\src\main\java\com\agregio\offer\controller\OfferController.java
 C:\Users\Sylvain\workspace_eclipse42_wildfly_wlogger3\agregio\offer\src\main\java\com\agregio\offer\constant\MarketType.java
 C:\Users\Sylvain\workspace_eclipse42_wildfly_wlogger3\agregio\offer\src\main\java\com\agregio\offer\service\OfferService.java
@@ -10,4 +8,5 @@ C:\Users\Sylvain\workspace_eclipse42_wildfly_wlogger3\agregio\offer\src\main\jav
 C:\Users\Sylvain\workspace_eclipse42_wildfly_wlogger3\agregio\offer\src\main\java\com\agregio\offer\dto\offer\OfferRegistrationRequest.java
 C:\Users\Sylvain\workspace_eclipse42_wildfly_wlogger3\agregio\offer\src\main\java\com\agregio\offer\repository\OfferRepositoryCustom.java
 C:\Users\Sylvain\workspace_eclipse42_wildfly_wlogger3\agregio\offer\src\main\java\com\agregio\offer\repository\OfferRepositoryImpl.java
+C:\Users\Sylvain\workspace_eclipse42_wildfly_wlogger3\agregio\offer\src\main\java\com\agregio\offer\dto\market\MarketRequest.java
 C:\Users\Sylvain\workspace_eclipse42_wildfly_wlogger3\agregio\offer\src\main\java\com\agregio\offer\entity\Offer.java

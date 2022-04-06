@@ -7,7 +7,6 @@ com\agregio\offer\entity\Offer$OfferBuilder.class
 com\agregio\offer\repository\OfferRepositoryCustom.class
 com\agregio\offer\repository\OfferRepositoryImpl.class
 com\agregio\offer\repository\OfferRepository.class
-com\agregio\offer\constant\ParkType.class
 com\agregio\offer\dto\offer\OfferRegistrationRequest.class
 com\agregio\offer\service\OfferService.class
 com\agregio\offer\entity\Offer.class

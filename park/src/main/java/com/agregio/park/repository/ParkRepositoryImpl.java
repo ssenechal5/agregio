@@ -36,6 +36,6 @@ public class ParkRepositoryImpl extends QuerydslRepositorySupport implements Par
         }
         where.and(offer.day.between(start, end));
 
-        return from(park).where(where).fetch();
+        return from(park).innerJoin(park.offers, offer).where(where).fetch();
     }
 }
