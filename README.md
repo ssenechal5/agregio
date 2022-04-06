@@ -30,4 +30,10 @@ FLUSH PRIVILEGES;
 
 Liquibase
 ======================
-./liquibase.bat --driver=org.mariadb.jdbc.Driver --classpath=./mariadb-java-client-2.2.6.jar --changeLogFile=./db.changelog-master.xml --url="jdbc:mysql://localhost/agregio" --username=agregio --password=agregio migrate
+./install-sql/liquibase.bat --driver=org.mariadb.jdbc.Driver --classpath=./mariadb-java-client-2.2.6.jar --changeLogFile=./db.changelog-master.xml --url="jdbc:mysql://localhost/agregio" --username=agregio --password=agregio migrate
+ou
+./install-sql/run.bat
+
+PostMan
+======================
+./postman/Agregio.postman_collection.json
